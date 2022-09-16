@@ -5,14 +5,14 @@ public class Main {
     public static void main(String[] args) {
 
         //Clientes Pessoa Física
-        ClientePessoaFisica cliente1 = new ClientePessoaFisica("Rubia Falcão Amorim", "Travessa Juá, 87, CEP: 68909-618, Macapá/AP", "rubiaamorim@email.com", 987427375, "280.934.653-40");
-        ClientePessoaFisica cliente2 = new ClientePessoaFisica("Elino Barrada Bragança", "Rua Santa Clara, 202, CEP: 69312-349, Boa Vista/RR", "elino.braganca@geradornv.com.br", 985565282, "158.203.062-60");
-        ClientePessoaFisica cliente3 = new ClientePessoaFisica("Wanda Palmas Vitorino", "Avenida Uraçá, 2437, CEP: 79018-031, Campo Grande/MS", "wanda.vitorino@geradornv.com.br", 969911216, "297.542.461-22");
+        ClientePessoaFisica cliente1 = new ClientePessoaFisica("Rubia Falcão Amorim", "Travessa Juá, 87, CEP: 68909-618, Macapá/AP", "rubiaamorim@email.com", 987427375, 28093465340L);
+        ClientePessoaFisica cliente2 = new ClientePessoaFisica("Elino Barrada Bragança", "Rua Santa Clara, 202, CEP: 69312-349, Boa Vista/RR", "elino.braganca@geradornv.com.br", 985565282, 15820306260L);
+        ClientePessoaFisica cliente3 = new ClientePessoaFisica("Wanda Palmas Vitorino", "Avenida Uraçá, 2437, CEP: 79018-031, Campo Grande/MS", "wanda.vitorino@geradornv.com.br", 969911216, 29754246122L);
 
         //Clientes PJ
-        ClientePessoaJuridica cliente4 = new ClientePessoaJuridica("Borges Carvalho Ferragens ME", "Rua William de Oliveira, 302, CEP: 58436-156, Campina Grande/PB", "ferragens.borges@geradornv.com.br", 22930213, "71.544.337/0001-08");
-        ClientePessoaJuridica cliente5 = new ClientePessoaJuridica("Esteves Amorim Funilaria LTDA", "Rua Cafelândia, 558, CEP: 78710-856, Rondonópolis/MT", "funilaria.esteves@geradornv.com.br", 35271270, "66.567.693/0001-07");
-        ClientePessoaJuridica cliente6 = new ClientePessoaJuridica("Jales Alves Floricultura LTDA", "Rua Jaime Cerveira, 880, CEP: 79017-060, Campo Grande/MS", "floricultura.jales@geradornv.com.br", 32552541, "31.771.347/0001-61");
+        ClientePessoaJuridica cliente4 = new ClientePessoaJuridica("Borges Carvalho Ferragens ME", "Rua William de Oliveira, 302, CEP: 58436-156, Campina Grande/PB", "ferragens.borges@geradornv.com.br", 22930213, 71544337000108L);
+        ClientePessoaJuridica cliente5 = new ClientePessoaJuridica("Esteves Amorim Funilaria LTDA", "Rua Cafelândia, 558, CEP: 78710-856, Rondonópolis/MT", "funilaria.esteves@geradornv.com.br", 35271270, 66567693000107L);
+        ClientePessoaJuridica cliente6 = new ClientePessoaJuridica("Jales Alves Floricultura LTDA", "Rua Jaime Cerveira, 880, CEP: 79017-060, Campo Grande/MS", "floricultura.jales@geradornv.com.br", 32552541, 31771347000161L);
 
         //Entregadores
         Entregador entregador1 = new Entregador("Nei Furtado Borralho", "Rua Dois, 127, CEP: 23036-064, Rio de Janeiro/RJ", "nei.borralho@geradornv.com.br", 996451672, "25741356650", "Moto");

@@ -3,10 +3,10 @@ package JORDelivery;
 public class ClientePessoaFisica extends Pessoa{
 
     //atributos
-    private String cpf;
+    private long cpf;
 
     //construtor
-    public ClientePessoaFisica(String nome, String endereco, String email, Integer telefone, String cpf) {
+    public ClientePessoaFisica(String nome, String endereco, String email, Integer telefone, long cpf) {
         super(nome, endereco, email, telefone);
         this.cpf = cpf;
     }
@@ -18,7 +18,7 @@ public class ClientePessoaFisica extends Pessoa{
     }
 
     //getter para poder consultar os dados
-    public String getCpf() {
+    public long getCpf() {
         return cpf;
     }
 }

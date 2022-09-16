@@ -9,10 +9,10 @@ public class Rota {
     private String endColeta;
     private String endEntrega;
     private String cliente;
-    private String entregador;
+    private Entregador entregador;
 
     //construtor
-    public Rota(Integer idRota, Integer idPacote, String status, String endColeta, String endEntrega, String cliente, String entregador) {
+    public Rota(Integer idRota, Integer idPacote, String status, String endColeta, String endEntrega, String cliente, Entregador entregador) {
         this.idRota = idRota;
         this.idPacote = idPacote;
         this.status = status;
@@ -24,13 +24,13 @@ public class Rota {
 
     //métodos
     public void exibirDados(){
-        System.out.println("ID: " + this.idRota + "\nPacote: " + this.idPacote + "\nCliente: " + this.cliente + "\nStatus: " + this.status + "\nEntregador: " + this.entregador + "\nEndereço de Coleta: " + this.endColeta + "\nEndereço de Entrega: " + this.endEntrega);
+        System.out.println("ID: " + this.idRota + "\nPacote: " + this.idPacote + "\nCliente: " + this.cliente + "\nStatus: " + this.status + "\nEntregador: " + this.entregador.getNome() + "\nEndereço de Coleta: " + this.endColeta + "\nEndereço de Entrega: " + this.endEntrega);
     }
 
     public void atualizarStatus(int novoStatus){
         switch (novoStatus){
             case 1:
-                this.status = "Em Preparação";
+                this.status = "Em Preparação";0
                 break;
 
             case 2:

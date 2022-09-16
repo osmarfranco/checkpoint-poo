@@ -3,10 +3,10 @@ package JORDelivery;
 public class ClientePessoaJuridica extends Pessoa{
 
     //atributos
-    private String cnpj;
+    private long cnpj;
 
     //construtor
-    public ClientePessoaJuridica(String nome, String endereco, String email, Integer telefone, String cnpj) {
+    public ClientePessoaJuridica(String nome, String endereco, String email, Integer telefone, long cnpj) {
         super(nome, endereco, email, telefone);
         this.cnpj = cnpj;
     }
@@ -18,7 +18,7 @@ public class ClientePessoaJuridica extends Pessoa{
     }
 
     //getter para poder consultar os dados
-    public String getCnpj() {
+    public Long getCnpj() {
         return cnpj;
     }
 }

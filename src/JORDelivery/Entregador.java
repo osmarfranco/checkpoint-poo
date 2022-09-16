@@ -1,5 +1,7 @@
 package JORDelivery;
 
+
+
 public class Entregador extends Pessoa{
 
     //atributos
@@ -65,6 +67,9 @@ public class Entregador extends Pessoa{
             case 6:
                 this.tipoVeiculo = "Carreto";
                 break;
+
+            default:
+                throw new RuntimeException("veículo inválido");
         }
     }
 
