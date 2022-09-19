@@ -8,29 +8,226 @@ public class Rota {
     private String status;
     private String endColeta;
     private String endEntrega;
-    private String cliente;
+    private ClientePessoaJuridica destinatarioPJ;
+    private ClientePessoaFisica destinatarioPF;
+    private ClientePessoaJuridica remetentePJ;
+    private ClientePessoaFisica remetentePF;
     private Entregador entregador;
+    private int tipoDeRota;
 
-    //construtor
-    public Rota(Integer idRota, Integer idPacote, String status, String endColeta, String endEntrega, String cliente, Entregador entregador) {
+    //construtor Remetente e Destinatário PF
+    public Rota(Integer idRota, Pacote pacote, int status, ClientePessoaFisica destinatario, ClientePessoaFisica remetente, Entregador entregador) {
         this.idRota = idRota;
-        this.idPacote = idPacote;
-        this.status = status;
-        this.endColeta = endColeta;
-        this.endEntrega = endEntrega;
-        this.cliente = cliente;
+        this.idPacote = pacote.getIdPacote();
+        this.endColeta = remetente.getEndereco();
+        this.endEntrega = destinatario.getEndereco();
+        this.destinatarioPF = destinatario;
+        this.remetentePF = remetente;
         this.entregador = entregador;
+        this.tipoDeRota = 1;
+
+        switch (status){
+            case 1:
+                this.status = "Em Preparação";
+                break;
+
+            case 2:
+                this.status = "Aguardando Coleta";
+                break;
+
+            case 3:
+                this.status = "Em trânsito";
+                break;
+
+            case 4:
+                this.status = "Entregue";
+                break;
+
+            case 5:
+                this.status = "Extraviado";
+                break;
+
+            case 6:
+                this.status = "Destinatário Ausente";
+                break;
+
+            case 7:
+                this.status = "Cancelado";
+                break;
+
+            default:
+                this.status = "Não definido";
+                break;
+        }
+    }
+
+    //construtor Remetente PF e Destinatário PJ
+    public Rota(Integer idRota, Pacote pacote, int status, ClientePessoaJuridica destinatario, ClientePessoaFisica remetente, Entregador entregador) {
+        this.idRota = idRota;
+        this.idPacote = pacote.getIdPacote();
+        this.endColeta = remetente.getEndereco();
+        this.endEntrega = destinatario.getEndereco();
+        this.destinatarioPJ = destinatario;
+        this.remetentePF = remetente;
+        this.entregador = entregador;
+        this.tipoDeRota = 2;
+
+        switch (status){
+            case 1:
+                this.status = "Em Preparação";
+                break;
+
+            case 2:
+                this.status = "Aguardando Coleta";
+                break;
+
+            case 3:
+                this.status = "Em trânsito";
+                break;
+
+            case 4:
+                this.status = "Entregue";
+                break;
+
+            case 5:
+                this.status = "Extraviado";
+                break;
+
+            case 6:
+                this.status = "Destinatário Ausente";
+                break;
+
+            case 7:
+                this.status = "Cancelado";
+                break;
+
+            default:
+                this.status = "Não definido";
+                break;
+        }
+    }
+
+    //construtor Remetente e Destinatário PJ
+    public Rota(Integer idRota, Pacote pacote, int status, ClientePessoaJuridica destinatario, ClientePessoaJuridica remetente, Entregador entregador) {
+        this.idRota = idRota;
+        this.idPacote = pacote.getIdPacote();
+        this.endColeta = remetente.getEndereco();
+        this.endEntrega = destinatario.getEndereco();
+        this.destinatarioPJ = destinatario;
+        this.remetentePJ = remetente;
+        this.entregador = entregador;
+        this.tipoDeRota = 3;
+
+        switch (status){
+            case 1:
+                this.status = "Em Preparação";
+                break;
+
+            case 2:
+                this.status = "Aguardando Coleta";
+                break;
+
+            case 3:
+                this.status = "Em trânsito";
+                break;
+
+            case 4:
+                this.status = "Entregue";
+                break;
+
+            case 5:
+                this.status = "Extraviado";
+                break;
+
+            case 6:
+                this.status = "Destinatário Ausente";
+                break;
+
+            case 7:
+                this.status = "Cancelado";
+                break;
+
+            default:
+                this.status = "Não definido";
+                break;
+        }
+    }
+
+    //construtor Remetente PJ e Destinatário PF
+    public Rota(Integer idRota, Pacote pacote, int status, ClientePessoaFisica destinatario, ClientePessoaJuridica remetente, Entregador entregador) {
+        this.idRota = idRota;
+        this.idPacote = pacote.getIdPacote();
+        this.endColeta = remetente.getEndereco();
+        this.endEntrega = destinatario.getEndereco();
+        this.destinatarioPF = destinatario;
+        this.remetentePJ = remetente;
+        this.entregador = entregador;
+        this.tipoDeRota = 4;
+
+        switch (status){
+            case 1:
+                this.status = "Em Preparação";
+                break;
+
+            case 2:
+                this.status = "Aguardando Coleta";
+                break;
+
+            case 3:
+                this.status = "Em trânsito";
+                break;
+
+            case 4:
+                this.status = "Entregue";
+                break;
+
+            case 5:
+                this.status = "Extraviado";
+                break;
+
+            case 6:
+                this.status = "Destinatário Ausente";
+                break;
+
+            case 7:
+                this.status = "Cancelado";
+                break;
+
+            default:
+                this.status = "Não definido";
+                break;
+        }
     }
 
     //métodos
     public void exibirDados(){
-        System.out.println("ID: " + this.idRota + "\nPacote: " + this.idPacote + "\nCliente: " + this.cliente + "\nStatus: " + this.status + "\nEntregador: " + this.entregador.getNome() + "\nEndereço de Coleta: " + this.endColeta + "\nEndereço de Entrega: " + this.endEntrega);
+        switch (this.tipoDeRota){
+            case 1:
+                //PF -> PF
+                System.out.println("ID: " + this.idRota + "\nStatus: " + this.status + "\nPacote: " + this.idPacote + "\nDestinatário: " + this.destinatarioPF.getNome() + "\nEndereço de Entrega: " + this.endEntrega + "\nRemetente: " + this.remetentePF.getNome() + "\nEndereço de Coleta: " + this.endColeta + "\nEntregador: " + this.entregador.getNome());
+                break;
+
+            case 2:
+                // PF -> PJ
+                System.out.println("ID: " + this.idRota + "\nStatus: " + this.status + "\nPacote: " + this.idPacote + "\nDestinatário: " + this.destinatarioPJ.getNome() + "\nEndereço de Entrega: " + this.endEntrega + "\nRemetente: " + this.remetentePF.getNome() + "\nEndereço de Coleta: " + this.endColeta + "\nEntregador: " + this.entregador.getNome());
+                break;
+
+            case 3:
+                // PJ -> PJ
+                System.out.println("ID: " + this.idRota + "\nStatus: " + this.status + "\nPacote: " + this.idPacote + "\nDestinatário: " + this.destinatarioPJ.getNome() + "\nEndereço de Entrega: " + this.endEntrega + "\nRemetente: " + this.remetentePJ.getNome() + "\nEndereço de Coleta: " + this.endColeta + "\nEntregador: " + this.entregador.getNome());
+                break;
+
+            case 4:
+                // PJ -> PF
+                System.out.println("ID: " + this.idRota + "\nStatus: " + this.status + "\nPacote: " + this.idPacote + "\nDestinatário: " + this.destinatarioPF.getNome() + "\nEndereço de Entrega: " + this.endEntrega + "\nRemetente: " + this.remetentePJ.getNome() + "\nEndereço de Coleta: " + this.endColeta + "\nEntregador: " + this.entregador.getNome());
+                break;
+        }
     }
 
     public void atualizarStatus(int novoStatus){
         switch (novoStatus){
             case 1:
-                this.status = "Em Preparação";0
+                this.status = "Em Preparação";
                 break;
 
             case 2:
@@ -59,44 +256,7 @@ public class Rota {
         }
     }
 
-    public void atualizarEntregador(String novoEntregador){
+    public void atualizarEntregador(Entregador novoEntregador){
         this.entregador = novoEntregador;
-    }
-
-    //getters e setters
-    public Integer getIdRota() {
-        return idRota;
-    }
-
-    public Integer getIdPacote() {
-        return idPacote;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getEndColeta() {
-        return endColeta;
-    }
-
-    public String getEndEntrega() {
-        return endEntrega;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public String getEntregador() {
-        return entregador;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setEntregador(String entregador) {
-        this.entregador = entregador;
-    }
+    };
 }

@@ -27,24 +27,8 @@ public class Pacote {
         }
     }
 
-    //getters para consultar os dados
+    //getter
     public Integer getIdPacote() {
         return idPacote;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public String getDimensoes() {
-        return dimensoes;
-    }
-
-    public Double getPeso() {
-        return peso;
-    }
-
-    public Boolean getTemSeguro() {
-        return temSeguro;
     }
 }

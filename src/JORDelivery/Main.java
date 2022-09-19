@@ -15,30 +15,32 @@ public class Main {
         ClientePessoaJuridica cliente6 = new ClientePessoaJuridica("Jales Alves Floricultura LTDA", "Rua Jaime Cerveira, 880, CEP: 79017-060, Campo Grande/MS", "floricultura.jales@geradornv.com.br", 32552541, 31771347000161L);
 
         //Entregadores
-        Entregador entregador1 = new Entregador("Nei Furtado Borralho", "Rua Dois, 127, CEP: 23036-064, Rio de Janeiro/RJ", "nei.borralho@geradornv.com.br", 996451672, "25741356650", "Moto");
-        Entregador entregador2 = new Entregador("Rogério Leite Marica", "Quadra QN 8F Bloco D, CEP: 71880-184, Brasília/DF", "rogerio.marica@geradornv.com.br", 983886085, "73303192592", "Van", true);
-        Entregador entregador3 = new Entregador("Bento Cavalcanti Ramos", "Rua Bela Vista, 926, CEP: 27288-361, Volta Redonda/RJ", "bento.ramos@geradornv.com.br", 996155006, "41314511400", "Utilitário");
-        Entregador entregador4 = new Entregador("Iago França Diniz", "Rua Ruy Virmond Carnasciali, 1762, CEP: 80310-550, Curitiba/PR", "iago.diniz@geradornv.com.br", 979427459, "11976862528", "Carreto", true);
+        Entregador entregador1 = new Entregador("Nei Furtado Borralho", "Rua Dois, 127, CEP: 23036-064, Rio de Janeiro/RJ", "nei.borralho@geradornv.com.br", 996451672, 25741356650L, 1);
+        Entregador entregador2 = new Entregador("Rogério Leite Marica", "Quadra QN 8F Bloco D, CEP: 71880-184, Brasília/DF", "rogerio.marica@geradornv.com.br", 983886085, 73303192592L, 5, true);
+        Entregador entregador3 = new Entregador("Bento Cavalcanti Ramos", "Rua Bela Vista, 926, CEP: 27288-361, Volta Redonda/RJ", "bento.ramos@geradornv.com.br", 996155006, 41314511400L, 4);
+        Entregador entregador4 = new Entregador("Iago França Diniz", "Rua Ruy Virmond Carnasciali, 1762, CEP: 80310-550, Curitiba/PR", "iago.diniz@geradornv.com.br", 979427459, 11976862528L, 6, true);
 
         //Pacotes
-        Pacote pacote1 = new Pacote(256849, "Geladeira Samsung", "185 x 82 x 70", 60.00, true);
+        Pacote pacote1 = new Pacote(256849, "Geladeira Metalfrio", "185 x 82 x 70", 60.00, true);
         Pacote pacote2 = new Pacote(559874, "Notebook Acer", "48 x 34 x 9", 3.20, true);
         Pacote pacote3 = new Pacote(974523, "Livros", "35 x 25 x 15", 6.2, false);
+        Pacote pacote4 = new Pacote(698544,"Impressão Fine Art", "60 x 20 x 10", 0.8, false);
 
         //Rotas
-        Rota rota1 = new Rota(225684, pacote1.getIdPacote(), "Em trânsito", cliente4.getEndereco(), cliente1.getEndereco(),cliente1.getNome(),entregador4.getNome());
-        Rota rota2 = new Rota(226487, pacote2.getIdPacote(), "Aguardando Coleta", cliente5.getEndereco(), cliente2.getEndereco(), cliente2.getNome(), entregador1.getNome());
-        Rota rota3 = new Rota(221254, pacote3.getIdPacote(), "Em Preparação", cliente6.getEndereco(), cliente3.getEndereco(), cliente3.getNome()," ");
+        Rota rota1 = new Rota(223547, pacote4, 1, cliente1, cliente2, null);
+        Rota rota2 = new Rota(228963, pacote2, 2, cliente4, cliente3, entregador1);
+        Rota rota3 = new Rota(226345, pacote1, 3, cliente5, cliente6, entregador2);
+        Rota rota4 = new Rota(227319, pacote3, 4, cliente2, cliente4, entregador3);
 
-        rota1.atualizarStatus(4);
+        rota1.atualizarEntregador(entregador4);
+        rota1.atualizarStatus(2);
         rota1.exibirDados();
 
-        rota2.atualizarStatus(3);
         rota2.exibirDados();
 
-        rota3.atualizarEntregador(entregador2.getNome());
-        rota3.atualizarStatus(2);
         rota3.exibirDados();
+
+        rota4.exibirDados();
 
     }
 }

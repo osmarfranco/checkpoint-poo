@@ -5,23 +5,81 @@ package JORDelivery;
 public class Entregador extends Pessoa{
 
     //atributos
-    private String cnh;
+    private Long cnh;
     private String tipoVeiculo;
     private Boolean isTurnoNoite;
 
     //construtor para criar um entregador comum
-    public Entregador(String nome, String endereco, String email, Integer telefone, String cnh, String tipoVeiculo) {
+    public Entregador(String nome, String endereco, String email, Integer telefone, Long cnh, int tipoVeiculo) {
         super(nome, endereco, email, telefone);
         this.cnh = cnh;
-        this.tipoVeiculo = tipoVeiculo;
+
+        switch(tipoVeiculo){
+            case 1:
+                this.tipoVeiculo = "Moto";
+                break;
+
+            case 2:
+                this.tipoVeiculo = "Carro Hatch";
+                break;
+
+            case 3:
+                this.tipoVeiculo = "Carro Sedan";
+                break;
+
+            case 4:
+                this.tipoVeiculo = "Utilitário";
+                break;
+
+            case 5:
+                this.tipoVeiculo = "Van";
+                break;
+
+            case 6:
+                this.tipoVeiculo = "Carreto";
+                break;
+
+            default:
+                this.tipoVeiculo = "Indefinido";
+                break;
+        }
     }
 
     //construtor com sobrecarga para cadastrar entregadores noturnos
-    public Entregador(String nome, String endereco, String email, Integer telefone, String cnh, String tipoVeiculo, Boolean isTurnoNoite) {
+    public Entregador(String nome, String endereco, String email, Integer telefone, Long cnh, int tipoVeiculo, Boolean isTurnoNoite) {
         super(nome, endereco, email, telefone);
         this.cnh = cnh;
-        this.tipoVeiculo = tipoVeiculo;
         this.isTurnoNoite = isTurnoNoite;
+
+        switch(tipoVeiculo){
+            case 1:
+                this.tipoVeiculo = "Moto";
+                break;
+
+            case 2:
+                this.tipoVeiculo = "Carro Hatch";
+                break;
+
+            case 3:
+                this.tipoVeiculo = "Carro Sedan";
+                break;
+
+            case 4:
+                this.tipoVeiculo = "Utilitário";
+                break;
+
+            case 5:
+                this.tipoVeiculo = "Van";
+                break;
+
+            case 6:
+                this.tipoVeiculo = "Carreto";
+                break;
+
+            default:
+                this.tipoVeiculo = "Indefinido";
+                break;
+        }
     }
 
     //métodos
@@ -74,7 +132,7 @@ public class Entregador extends Pessoa{
     }
 
     //getters e setters
-    public String getCnh() {
+    public Long getCnh() {
         return cnh;
     }
 
